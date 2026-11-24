@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(EntityRenderer.class)
 public class MixinEntityRenderer {
-    // Метод renderWorld (SRG: func_175068_a)
-    @Inject(method = "renderWorld", at = @At("RETURN"))
+    // SRG имя для renderWorld в 1.12.2
+    @Inject(method = "func_175068_a", at = @At("RETURN"))
     private void onRenderWorld(float partialTicks, CallbackInfo ci) {
         Minecraft mc = Minecraft.getMinecraft();
         if (mc.player != null) {
